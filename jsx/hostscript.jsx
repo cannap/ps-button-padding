@@ -88,7 +88,7 @@ var constrain;
 var rulerUnits;
 
 /**
- * Resizes the currently active layer.
+ * Resizes the currently active layer. //
  * @param  {Number} width Resize width (bounding box).
  * @param  {Number} height Resize height (bounding box).
  * @param  {Number} constrain Constrain proportions (keep aspect ratio)?
