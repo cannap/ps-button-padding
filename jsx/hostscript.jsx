@@ -1,17 +1,12 @@
 
 function documentID() {
-
    return app.activeDocument.name;
-
 }
 
-
 function padding(y, x,border) {
-
     y       = typeof y !== 'undefined' ? y : 0;
     x       = typeof x !== 'undefined' ? x : 0;
     border  = typeof border !== 'undefined' ? border : 0;
-
 
     var activeLayer = app.activeDocument.activeLayer
     if (!activeLayer.layers || activeLayer.layers.length < 1) {
@@ -42,10 +37,7 @@ function padding(y, x,border) {
                 nextLayer.translate(deltaX - x , deltaY - y );
 
             }
-
-
-
-
+            
         }
     }
 
