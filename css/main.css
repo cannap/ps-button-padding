@@ -1,0 +1,29 @@
+/*Your styles*/
+body {
+  margin: 10px; }
+
+
+#btn_test {
+  width: 100%; }
+
+/*
+Those classes will be edited at runtime with values specified
+by the settings of the CC application
+*/
+/*font family, color and size*/
+/*background color*/
+/*lighter background color*/
+/*darker background color*/
+/*background color and font*/
+.hostButton {
+  border: 1px solid;
+  border-radius: 2px;
+  height: 20px;
+  vertical-align: bottom;
+  font-family: inherit;
+  color: inherit;
+  font-size: inherit; }
+
+/*# sourceMappingURL=styles.css.map */
+
+/*# sourceMappingURL=main.css.map */

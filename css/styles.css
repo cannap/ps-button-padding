@@ -1,0 +1,12 @@
+/*Your styles*/
+body {
+  margin: 10px; }
+
+#content {
+  width: 100%;
+  display: flex; }
+
+select {
+  width: 100%; }
+
+/*# sourceMappingURL=styles.css.map */
