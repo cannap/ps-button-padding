@@ -37,7 +37,7 @@ function padding(y, x,border) {
                 nextLayer.translate(deltaX - x , deltaY - y );
 
             }
-            
+
         }
     }
 
@@ -99,7 +99,6 @@ function resizeToBounds(layer, width, height, constrain) {
      * @param {UnitValue} layerBounds
      */
     var layerBounds;
-
     /**
      * Active layer width.
      * @type {Number}
