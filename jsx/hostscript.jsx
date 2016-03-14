@@ -1,12 +1,12 @@
 
 function documentID() {
-   return app.activeDocument.name;
+    return app.activeDocument.name;
 }
 
-function padding(y, x,border) {
-    y       = typeof y !== 'undefined' ? y : 0;
-    x       = typeof x !== 'undefined' ? x : 0;
-    border  = typeof border !== 'undefined' ? border : 0;
+function padding(y, x, border, align_x) {
+    y = typeof y !== 'undefined' ? y : 0;
+    x = typeof x !== 'undefined' ? x : 0;
+    border = typeof border !== 'undefined' ? border : 0;
 
     var activeLayer = app.activeDocument.activeLayer
     if (!activeLayer.layers || activeLayer.layers.length < 1) {
@@ -27,14 +27,31 @@ function padding(y, x,border) {
                 var textHeight = (textBounds[3].value - textBounds[1].value);
                 var textWidth = (textBounds[2].value - textBounds[0].value);
                 var nextLayer = activeLayer.layers[i + 1];
-                resizeToBounds(nextLayer, (x * 2)  + textWidth + (border *2) , (y * 2) + textHeight   + (border *2), false)
+
+
+                var resizeX = (x * 2) + textWidth + (border * 2);
+                var resizeY = (y * 2) + textHeight + (border * 2);
+                resizeToBounds(nextLayer, Math.round(resizeX), Math.round(resizeY), false)
 
                 var buttonBounds = nextLayer.bounds;
                 //Calculate Position
-                var deltaX = (textX - buttonBounds[0].value)  - (border)
-                var deltaY = (textY - buttonBounds[1].value)-  (border)
+                var deltaX = (textX - buttonBounds[0].value) - (border)
+                var deltaY = (textY - buttonBounds[1].value) - (border)
                 //move to calculated position
-                nextLayer.translate(deltaX - x , deltaY - y );
+
+                alert(deltaX - x);
+                alert(Math.round(deltaX - x));
+
+               nextLayer.translate(Math.round(deltaX - x), Math.round(deltaY - y));
+
+
+                if (align_x) {
+                    var alignX = textX - buttonBounds[0].value + x
+                   activeLayer.translate(Math.round(deltaX - alignX));
+
+                }
+
+
 
             }
 

@@ -5,6 +5,10 @@ body {
 #content {
   width: 100%;
   display: flex; }
+  #content #save {
+    position: absolute;
+    bottom: 10px;
+    left: 10px; }
 
 select {
   width: 100%; }
