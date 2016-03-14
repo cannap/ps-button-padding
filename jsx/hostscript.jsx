@@ -19,10 +19,10 @@ function padding(y, x, border, align_x) {
             if (kind === LayerKind.TEXT) {
                 layer.textItem.kind = TextType.POINTTEXT
 
-                //layer.textItem.kind = TextType.PARAGRAPHTEXT;
                 var textBounds = layer.bounds;
                 var textX = textBounds[0].value;
                 var textY = textBounds[1].value;
+                
                 //Get the height and width of the current layer TEXT
                 var textHeight = (textBounds[3].value - textBounds[1].value);
                 var textWidth = (textBounds[2].value - textBounds[0].value);
@@ -38,20 +38,11 @@ function padding(y, x, border, align_x) {
                 var deltaX = (textX - buttonBounds[0].value) - (border)
                 var deltaY = (textY - buttonBounds[1].value) - (border)
                 //move to calculated position
-
-                alert(deltaX - x);
-                alert(Math.round(deltaX - x));
-
-               nextLayer.translate(Math.round(deltaX - x), Math.round(deltaY - y));
-
-
+                nextLayer.translate(Math.round(deltaX - x), Math.round(deltaY - y));
                 if (align_x) {
                     var alignX = textX - buttonBounds[0].value + x
-                   activeLayer.translate(Math.round(deltaX - alignX));
-
+                    activeLayer.translate(Math.round(deltaX - alignX));
                 }
-
-
 
             }
 
@@ -195,10 +186,6 @@ function resizeToBounds(layer, width, height, constrain) {
         newWidth = scaleWidth * 100;
         newHeight = scaleHeight * 100;
     }
-
     // Performing the resize.
     layer.resize(newWidth, newHeight, AnchorPosition.MIDDLECENTER);
 }
-
-
-
